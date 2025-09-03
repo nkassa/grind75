@@ -12,22 +12,13 @@ public:
     
     int pop() 
     {
+        peek();
         int val = 0;
         if(!listTwo.empty())
         {
             val = listTwo.top();
             listTwo.pop();
             return val;
-        }
-        else
-        {
-            while(!list.empty())
-            {
-                listTwo.push(list.top());
-                list.pop();
-            }
-            val = listTwo.top();
-            listTwo.pop();
         }
         return val;
     }
@@ -58,11 +49,3 @@ public:
     }
 };
 
-/**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue* obj = new MyQueue();
- * obj->push(x);
- * int param_2 = obj->pop();
- * int param_3 = obj->peek();
- * bool param_4 = obj->empty();
- */
